@@ -1,0 +1,632 @@
+/* ===== GLOBAL RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+    position: relative;
+    scroll-behavior: smooth;
+}
+
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+    font-family: "Poppins", Arial, sans-serif;
+    background: #1b1b1b;
+    color: #fff;
+}
+
+/*  HEADER  */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: #0f0f0f;
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px;
+    border-bottom: 1px solid rgba(197, 157, 95, 0.3);
+}
+
+/* Logo */
+.logo {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #fbff08;
+    text-shadow: 0 0 8px rgba(197, 157, 95, 0.6);
+}
+
+/* Navigation */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 15px;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+/* Nav hover underline */
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 2px;
+    background: #c59d5f;
+    transition: width 0.3s ease;
+}
+
+nav a:hover {
+    color: #c59d5f;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* ===== HERO SECTION ===== */
+.Hero {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 20px;
+    background: radial-gradient(circle at top, #111110, #6e6e6b);
+    text-align: center;
+    position: relative;
+}
+
+/* Glow effect */
+.Hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        120deg,
+        transparent 35%,
+        rgba(197, 157, 95, 0.12),
+        transparent 65%
+    );
+    animation: heroGlow 8s linear infinite;
+}
+
+@keyframes heroGlow {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(100%); }
+}
+
+.Hero-content {
+    position: relative;
+    max-width: 800px;
+    z-index: 1;
+}
+
+/* Hero heading */
+.Hero h1 {
+    font-size: 36px;
+    line-height: 1.3;
+    margin-bottom: 25px;
+    color: #fddc03;
+    text-shadow: 0 0 15px rgba(197, 157, 95, 0.7);
+}
+
+/* Hero image */
+.Hero img {
+    width: 350px;
+    height: 350px;
+    margin: 25px auto;
+    display: block;
+    border-radius: 20px;
+    border: 2px solid rgba(197, 157, 95, 0.5);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.9);
+    transition: transform 0.4s ease;
+    object-fit: cover;
+}
+
+.Hero img:hover {
+    transform: scale(1.05);
+}
+
+/* Hero paragraph */
+.Hero p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #ddd;
+}
+
+/* ===== HR SEPARATOR ===== */
+hr {
+    border: none;
+    height: 1px;
+    background: linear-gradient(
+        to right,
+        transparent,
+        #c59d5f,
+        transparent
+    );
+    margin: 50px 0;
+}
+
+/* ===== SERVICES SECTION ===== */
+.services-container {
+    padding: 80px 20px;
+    background-image: url(images/clipper-8254064_1280.jpg);
+    background-position: center;
+}
+
+/* Services heading */
+.services-container h2 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 40px;
+    color: #0bff03;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+/* Wrapper */
+.service-table-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+    margin: 40px auto;
+    max-width: 1000px;
+}
+
+/* Base table style */
+.service-table-wrapper table {
+    width: 100%;
+    max-width: 450px;
+    border-collapse: collapse;
+    background: #111;
+    color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    font-family: Arial, sans-serif;
+}
+
+/* Table headings */
+.service-table-wrapper thead {
+    background: #c59d5f; /* gold tone */
+}
+
+.service-table-wrapper th {
+    padding: 15px;
+    text-align: left;
+    font-size: 16px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #000;
+}
+
+/* Table body */
+.service-table-wrapper td {
+    padding: 14px 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 14px;
+}
+
+/* Price column alignment */
+.service-table-wrapper td:last-child,
+.service-table-wrapper th:last-child {
+    text-align: right;
+    font-weight: bold;
+}
+
+/* Zebra striping */
+.service-table-wrapper tbody tr:nth-child(even) {
+    background: #1b1b1b;
+}
+
+/* Hover effect */
+.service-table-wrapper tbody tr:hover {
+    background: rgba(197, 157, 95, 0.15);
+    transition: background 0.3s ease;
+}
+
+/* Mobile responsive */
+@media (max-width: 738px) {
+    .service-table-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service-table-wrapper table {
+        max-width: 100%;
+    }
+}
+
+
+/* Vertical separator for price column */
+.service-table-wrapper th:last-child,
+.service-table-wrapper td:last-child {
+    border-left: 2px solid rgba(197, 157, 95, 0.6); /* gold divider */
+    padding-left: 20px;
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
+    border-left: 3px solid #c59d5f;
+
+
+}
+
+.bookingform {
+  max-width: 400px;
+  margin: auto;
+  padding: 20px;
+}
+
+.bookingform input,
+.bookingform textarea {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.services {
+  display: grid;
+  gap: 10px;
+}
+
+.services button {
+  padding: 10px;
+  border: none;
+  background: black;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.services button:hover {
+  background: #444;
+}
+
+
+/* ===== PORTFOLIO SECTION ===== */
+.gallery {
+    width: 100%;
+    
+    padding: 80px 20px;
+    margin: 0 auto;
+    background: radial-gradient(circle at top, #1a1a1a, #000);
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
+/* Subtle animated background glow */
+.gallery::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        120deg,
+        transparent 30%,
+        rgba(197, 157, 95, 0.12),
+        transparent 70%
+    );
+    animation: glowMove 8s infinite linear;
+    pointer-events: none;
+}
+
+@keyframes glowMove {
+    from { transform: translateX(-100%); }
+    to   { transform: translateX(100%); }
+}
+
+/* Heading */
+.gallery h2 {
+    position: relative;
+    font-size: 38px;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: #c59d5f;
+    text-shadow: 0 0 10px rgba(199, 179, 150, 0.6);
+}
+
+/* Decorative underline */
+.gallery h2::after {
+    content: "";
+    display: block;
+    width: 90px;
+    height: 3px;
+    background: #c59d5f;
+    margin: 15px auto 0;
+    border-radius: 3px;
+}
+
+/* ===== PHOTO GRID ===== */
+.photogrid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 20px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+/* Image cards */
+.photogrid img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    
+    object-fit: cover;
+    border-radius: 16px;
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.8),
+        inset 0 0 0 2px rgba(197, 157, 95, 0.15);
+    transition: 
+        transform 0.4s ease,
+        box-shadow 0.4s ease,
+        filter 0.4s ease;
+    filter: grayscale(10%) contrast(1.05);
+}
+
+/* Hover: POP effect */
+.photogrid img:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.9),
+        0 0 25px rgba(197, 157, 95, 0.5);
+    filter: grayscale(0%) contrast(1.15);
+    z-index: 2;
+}
+
+
+.photogrid img::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        120deg,
+        transparent 30%,
+        rgba(255, 255, 255, 0.25),
+        transparent 70%
+    );
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    border-radius: 16px;
+}
+
+.photogrid img:hover::after {
+    opacity: 1;
+}
+
+/* ===== MOBILE OPTIMIZATION ===== */
+@media (max-width: 600px) {
+    .gallery h2 {
+        font-size: 26px;
+        letter-spacing: 2px;
+    }
+
+    .photogrid {
+        gap: 15px;
+    }
+}
+
+@media (max-width: 900px){
+    .photogrid {
+        grid-template-columns: repeat(5, 1fr);
+    }
+    
+}
+
+@media (max-width: 600px){
+    .photogrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+}
+
+@media (max-width: 400px){
+    .photogrid {
+        grid-template-columns: 1fr;
+    }
+    
+}
+
+
+/* ===== SHARED SECTION STYLES ===== */
+.about-us-page,
+.contact-footer-area {
+    padding: 80px 20px;
+    background: linear-gradient(180deg, #0f0f0f, #000);
+    color: #fff;
+    position: relative;
+}
+
+/* Section headings */
+.about-us h2,
+.contact-footer-area h3 {
+    color: #c59d5f;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    text-shadow: 0 0 8px rgba(197, 157, 95, 0.5);
+}
+
+/* Paragraph text */
+.about-us p,
+.contact-footer-area p {
+    line-height: 1.7;
+    font-size: 15px;
+    color: #ddd;
+    max-width: 800px;
+}
+
+/* ===== BACK TO HOME LINK ===== */
+.back-link-container {
+    margin-top: 40px;
+}
+
+.back-to-home-link {
+    display: inline-block;
+    padding: 12px 26px;
+    border: 2px solid #c59d5f;
+    color: #c59d5f;
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+.back-to-home-link:hover {
+    background: #ded6d5;
+    color: #8da79a3d;
+    box-shadow: 0 0 20px rgba(117, 106, 90, 0.6);
+}
+
+/* ===== CONTACT FOOTER LAYOUT ===== */
+.contact-footer-area {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 50px;
+}
+
+/* Amenities list */
+.amenities ul {
+    margin-top: 20px;
+    padding-left: 0;
+    list-style: none;
+}
+
+.amenities li {
+    margin-bottom: 12px;
+    padding-left: 25px;
+    position: relative;
+}
+
+.amenities li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    color: #c59d5f;
+}
+
+/* ===== LOCATION / MAP ===== */
+.location p {
+    margin-bottom: 12px;
+    position: center;
+}
+
+.map-placeholder {
+    margin: 20px 0;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+    position: center;
+}
+/*booking form*/
+#bookingform{
+    max-width: 550px;
+    background-color: transparent;
+    margin: 45px auto;
+    border: 2px solid;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba 0,0,0,0.1;
+    position: left;
+}
+#booking{
+    max-width: 550px;
+    background-color: transparent;
+    margin: 45px auto;
+    border: 2px solid;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba 0,0,0,0.1;
+    position: left;
+}
+
+#booking input, #booking select, #booking button{
+    
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #a4a23d;
+    border-radius: 5px;
+
+}
+#booking button {
+    background: rgb(229, 217, 3);
+    cursor: pointer;
+}
+
+.social a{
+    text-decoration: none;
+    color: #fff;
+    margin-right: 15px;
+    font-size: 1.2rem;
+    transition: 0.3s;
+
+}
+
+.social a:hover .fa-facebook{
+    color: blue;
+}
+
+/* Add this to your <style> tag or CSS file */
+.social-links a {
+    font-size: 24px;       
+    text-decoration: none;
+}
+
+
+
+.social-links a {
+    font-size: 24px;       
+    margin: 0 10px;        
+    color: #1e2edbda;           
+    transition: 0.3s;      
+    text-decoration: none;
+}
+
+.social-links a:hover {
+    color: #0078ff;       
+}
+
+/* General styling for the icons */
+.social-links a {
+    font-size: 30px; /* Adjust size as needed */
+    margin: 10px;
+    text-decoration: none;
+    transition: transform 0.2s; /* Adds a little pop effect */
+    display: inline-block;
+}
+img {
+    width: 40px;
+    height: auto;
+    margin: 4px;
+}
+/* Official Facebook Blue */
+.facebook {
+    color: #1877F2;
+}
+
+
+.tiktok {
+    color: #415771d8; 
+}
+
+
+.social-links a:hover {
+    transform: scale(1.2);
+}
