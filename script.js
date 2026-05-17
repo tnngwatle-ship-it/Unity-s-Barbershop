@@ -41,7 +41,7 @@ function bookService(service) {
     text += `Name: ${name}\n`;
     text += `Service: ${service}\n`;
     text += `Date: ${date}\n`;
-    
+    text += `Time: ${time}\n`;
 
     if (message) {
         text += `Notes: ${message}\n`;
